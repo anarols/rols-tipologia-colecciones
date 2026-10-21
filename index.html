@@ -48,6 +48,7 @@
   @media (min-width:1024px){ .wrap{ padding-inline:64px; } }
   .sec{ padding-block:36px; }
   @media (min-width:768px){ .sec{ padding-block:56px; } }
+  main > section.sec + section.invita .invita-inner{ padding-top:0; }
 
   /* ---------- type ---------- */
   .eyebrow{
@@ -742,8 +743,8 @@
   }
 
   /* ---------- proyectos: mosaico escalonado ---------- */
-  .mosaico{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px 18px; margin-top:38px; padding-bottom:20px; }
-  @media (min-width:760px){ .mosaico{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:48px 28px; padding-bottom:40px; } }
+  .mosaico{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px 18px; margin-top:38px; padding-bottom:0; }
+  @media (min-width:760px){ .mosaico{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:48px 28px; padding-bottom:0; } }
   .mosaico a.mfig{ margin:0; display:block; text-decoration:none; color:inherit; }
   .mosaico a.mfig img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:16px; background:var(--surface-deep); transition:opacity .35s ease; }
   .mosaico a.mfig:hover img{ opacity:.88; }
