@@ -581,8 +581,14 @@
   @media (max-width:699px){ .slider .track{ gap:16px; } .slider .card{ flex-basis:calc((100% - 16px) / 2); } }
   .slider .card img{ aspect-ratio:4/5; }
   .slider .card img.half{ object-position:left center; }
-  .slider .card .nm{ font-size:14.5px; margin-top:12px; }
+  .slider .card .nm{ font-family:var(--display); font-size:16px; letter-spacing:.01em; margin-top:14px; }
   .slider .card .mat{ display:block; margin-top:4px; font-size:12.5px; color:var(--muted); }
+  /* tarjeta estilo best sellers: imagen 4/5 que cambia a ambiente al hover */
+  .slider .card .pic{ position:relative; display:block; aspect-ratio:4/5; border-radius:16px; overflow:hidden; background:var(--surface-deep); }
+  .slider .card .pic img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:0; aspect-ratio:auto; transition:opacity .6s ease, transform 1.1s ease; }
+  .slider .card .pic .amb{ opacity:0; }
+  .slider .card:hover .pic .amb{ opacity:1; }
+  .slider .card:hover .pic img{ transform:scale(1.03); }
 
   /* ---------- proveedores: radio de 50 km (centro, texto a los lados) ---------- */
   .rtop{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; }
@@ -842,41 +848,54 @@
     </div>
   </section>
 
-  <!-- ===== clasificaciones ===== -->
+  <!-- ===== clasificaciones (slider) ===== -->
   <section class="wrap sec">
-    <div class="ruleHead"><p class="eyebrow">Clasificaciones más utilizadas</p><span class="rule"></span></div>
-    <div class="pilares">
+    <div class="libTop">
+      <div>
+        <p class="eyebrow">Alfombras por tipología</p>
+        <h2>Explora por clasificación</h2>
+      </div>
+      <div class="slnav">
+        <a class="sllink" href="https://www.rolscarpets.com/colecciones/">Ver todas</a>
+        <button type="button" data-prev aria-label="Ver anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <button type="button" data-next aria-label="Ver siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      </div>
+    </div>
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/exterior/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/lyra-coleccion-detalle.webp" alt="Detalle de una alfombra de exterior de Rols" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras de exterior</span>
-      </a>
+    <div class="slider" data-slider>
+      <div class="track">
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/monocolor/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/luna-coleccion-detalle.jpg" alt="Detalle de una alfombra Rols monocolor" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras monocolor</span>
-      </a>
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/exterior/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/lyra-coleccion-detalle.webp" alt="Alfombra de exterior de Rols" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/lyra-coleccion-ambiente.webp" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras de exterior</span>
+        </a>
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/alfombras-geometricas/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/gala-diamond-coleccion-detalle.jpg" alt="Detalle de una alfombra Rols con estampado geométrico" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras geométricas</span>
-      </a>
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/monocolor/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/luna-coleccion-detalle.jpg" alt="Alfombra Rols monocolor" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/luna-coleccion-ambiente.jpg" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras monocolor</span>
+        </a>
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/lana/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/annabelle-iii-coleccion-detalle.jpg" alt="Detalle de una alfombra Rols de lana" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras de lana</span>
-      </a>
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/alfombras-geometricas/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/gala-diamond-coleccion-detalle.jpg" alt="Alfombra Rols con estampado geométrico" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/gala-diamond-coleccion-ambiente.jpg" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras geométricas</span>
+        </a>
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/recicladas/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/maya-gradient-coleccion-detalle.jpg" alt="Detalle de una alfombra Rols de materiales reciclados" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras recicladas</span>
-      </a>
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/lana/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/annabelle-iii-coleccion-detalle.jpg" alt="Alfombra Rols de lana" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2023/02/annabelle-iii-coleccion-ambiente.jpg" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras de lana</span>
+        </a>
 
-      <a class="pilar" href="https://www.rolscarpets.com/alfombras-a-medida/sisal-look/">
-        <span class="pic"><img src="https://www.rolscarpets.com/wp-content/uploads/2023/02/terra-atacama-coleccion-detalle.jpg" alt="Detalle de una alfombra Rols de aspecto sisal" loading="lazy" width="1000" height="1600"><span class="hovcta">Ver colecciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline></svg></span></span>
-        <span class="t">Alfombras aspecto sisal</span>
-      </a>
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/recicladas/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2023/09/Strata_003_03.webp" alt="Alfombra Rols de materiales reciclados (colección Strata)" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2023/09/Strata_005_06.webp" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras recicladas</span>
+        </a>
 
+        <a class="card" href="https://www.rolscarpets.com/alfombras-a-medida/sisal-look/">
+          <span class="pic"><img class="pack" src="https://www.rolscarpets.com/wp-content/uploads/2024/04/Palma_Icon_Cinder_04.webp" alt="Alfombra Rols de aspecto sisal (colección Palma Icon)" loading="lazy" width="1000" height="1250"><img class="amb" src="https://www.rolscarpets.com/wp-content/uploads/2024/04/palma-icon-coleccion-ambiente.webp" alt="" aria-hidden="true" loading="lazy" width="1000" height="1250"></span>
+          <span class="nm">Alfombras aspecto sisal</span>
+        </a>
+
+      </div>
     </div>
   </section>
 
